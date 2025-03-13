@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo - getElementsByClassName</title>
+  <style>
+    .destacado {
+      background-color: yellow;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .normal {
+      background-color: lightgray;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exemplo do uso de getElementsByClassName</h1>
+  <p class="destacado">Este é um parágrafo destacado.</p>
+  <p class="normal">Este é um parágrafo normal.</p>
+  <p class="destacado">Outro parágrafo destacado.</p>
+
+  <button onclick="alterarDestacados()">Alterar Estilo dos Destacados</button>
+
+  <script>
+    /**
+     * O método `getElementsByClassName` permite selecionar todos os elementos de uma página
+     * que possuem uma determinada classe. Ele retorna uma coleção chamada `HTMLCollection`.
+     * Essa coleção pode ser percorrida usando um loop para aplicar alterações a cada elemento.
+     */
+
+    function alterarDestacados() {
+      // Seleciona todos os elementos com a classe "destacado"
+      const elementos = document.getElementsByClassName('destacado');
+
+      // `elementos` é uma HTMLCollection (semelhante a um array).
+      // Usamos um loop para alterar o estilo de cada elemento individualmente.
+      for (let i = 0; i < elementos.length; i++) {
+        elementos[i].style.backgroundColor = 'lightblue'; // Altera a cor de fundo.
+        elementos[i].style.color = 'darkblue'; // Altera a cor do texto.
+        elementos[i].style.fontWeight = 'bold'; // Deixa o texto em negrito.
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treinando Eventos em JavaScript</title>
+  <!-- <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: lightgray;
+      margin: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #ccc;
+    }
+
+    .output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style> -->
+<!-- </head>
+<body>
+  <h1>Treinando Eventos em JavaScript</h1> --> 
+
+  <!-- Botão de Clique -->
+  <!-- <button id="clickButton">Clique aqui</button> -->
+
+  <!-- Caixa para eventos de mouse -->
+  <!-- <div class="box" id="mouseBox">Passe o mouse aqui</div> -->
+
+  <!-- Campo de texto para evento de teclado -->
+  <!-- <input type="text" id="textInput" placeholder="Digite algo..." /> -->
+
+  <!-- Área para exibir as saídas -->
+  <!-- <div class="output" id="output">Eventos serão exibidos aqui</div> -->
+
+  <!-- <script>
+    // Exibindo mensagem ao clicar no botão
+    const clickButton = document.getElementById('clickButton');
+    clickButton.addEventListener('click', () => {
+      document.getElementById('output').textContent = 'Você clicou no botão!';
+    });
+
+    // Alterando a mensagem ao passar o mouse na caixa
+    const mouseBox = document.getElementById('mouseBox');
+    mouseBox.addEventListener('mouseover', () => {
+      mouseBox.style.backgroundColor = 'lightblue';
+      document.getElementById('output').textContent = 'Mouse passou pela caixa!';
+    });
+
+    // Restaurando a cor original ao tirar o mouse da caixa
+    mouseBox.addEventListener('mouseout', () => {
+      mouseBox.style.backgroundColor = 'lightgray';
+      document.getElementById('output').textContent = 'Mouse saiu da caixa!';
+    });
+
+    // Exibindo o texto digitado no campo de entrada
+    const textInput = document.getElementById('textInput');
+    textInput.addEventListener('input', () => {
+      document.getElementById('output').textContent = `Você digitou: ${textInput.value}`;
+    });
+  </script> -->
+<!-- </body>-->
+
+<!-- <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Imagens</title>
+</head>
+<body>
+  <div>
+    <img id="imagem-principal" src="luffy.png" alt="Imagem Principal" width="300" />
+  </div>
+  
+  <div>
+    <img class="thumbnail" src="luffy.png" alt="Miniatura 1" width="100" />
+    <img class="thumbnail" src="zoro.png" alt="Miniatura 2" width="100" />
+    <img class="thumbnail" src="onepiece.png" alt="Miniatura 3" width="100" />
+  </div>
+
+  <script>
+    const imagemPrincipal = document.querySelector('#imagem-principal');
+    const imagens = document.querySelectorAll('.thumbnail');
+
+    imagens.forEach(imagem => {
+      imagem.addEventListener('click', () => {
+        imagemPrincipal.src = imagem.src;  // Atualiza a imagem principal
+      });
+    });
+  </script> -->
+  
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrados Coloridos</title>
+    <style>
+      .quadrado {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        margin: 10px;
+        background-color: #ccc;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quadrado"></div>
+    <div class="quadrado"></div>
+    <div class="quadrado"></div>
+
+    <script>
+      function gerarCor(){
+        let corEscolha = "0123456789ABCDEF"
+        let cor = "#"
+
+        for (let i = 0; i < 6; i++){
+          cor += corEscolha[Math.floor(Math.random() * 16)]
+        }
+        return cor
+      }
+     
+      const quadrados = document.querySelectorAll('.quadrado')
+
+      quadrados.forEach(element => {
+        element.addEventListener('click', ()=>{
+          corGerada = gerarCor()
+          element.style.background = corGerada
+        })
+      });
+    </script>
+  </body>  
+</html>
+
+
+
+

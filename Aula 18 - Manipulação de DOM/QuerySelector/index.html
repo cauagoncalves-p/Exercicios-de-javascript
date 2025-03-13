@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo - querySelector e querySelectorAll</title>
+  <style>
+    .item {
+      background-color: lightgray;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
+
+    .destacado {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exemplo de querySelector e querySelectorAll</h1>
+
+  <ul>
+    <li class="item">Item 1</li>
+    <li class="item">Item 2</li>
+    <li class="item">Item 3</li>
+  </ul>
+
+  <p class="texto">Este é um parágrafo com a classe <strong>texto</strong>.</p>
+  <p class="texto">Outro parágrafo com a classe <strong>texto</strong>.</p>
+
+  <button onclick="usarQuerySelector()">Usar querySelector</button>
+  <button onclick="usarQuerySelectorAll()">Usar querySelectorAll</button>
+
+  <script>
+    /**
+     * O método `querySelector`:
+     * - Seleciona **o primeiro elemento** que corresponde ao seletor CSS fornecido.
+     * - Funciona com qualquer seletor válido de CSS (como classes, IDs, tags e combinações).
+     */
+
+    function usarQuerySelector() {
+      // Seleciona o primeiro elemento com a classe "item"
+      const primeiroItem = document.querySelector('.item');
+      
+      // Adiciona a classe "destacado" ao elemento encontrado
+      primeiroItem.classList.add('destacado');
+      alert('O primeiro elemento com a classe "item" foi destacado!');
+    }
+
+    /**
+     * O método `querySelectorAll`:
+     * - Seleciona **todos os elementos** que correspondem ao seletor CSS fornecido.
+     * - Retorna uma NodeList, que pode ser percorrida com loops.
+     */
+
+    function usarQuerySelectorAll() {
+      // Seleciona todos os elementos com a classe "texto"
+      const paragrafos = document.querySelectorAll('.texto');
+      
+      // Loop para alterar cada parágrafo encontrado
+      paragrafos.forEach((paragrafo, index) => {
+        paragrafo.style.backgroundColor = 'lightblue'; // Altera a cor de fundo
+        paragrafo.style.padding = '10px'; // Adiciona espaçamento interno
+        paragrafo.style.border = '1px solid blue'; // Adiciona uma borda
+        paragrafo.innerHTML += ` (Alterado - Posição: ${index + 1})`; // Adiciona texto
+      });
+
+      alert('Todos os parágrafos com a classe "texto" foram alterados!');
+    }
+  </script>
+</body>
+</html>
